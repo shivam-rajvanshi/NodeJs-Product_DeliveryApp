@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3">
+                <div class="imgContainer d-flex justify-content-center">
+                    <img src="{{ item.product.image }}" alt="" />
+                </div>
+                <h5 style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            ">
+                    {{ item.product.title }}
+                </h5>
+                <p style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              max-width: 100ch;
+            ">
+                    {{ item.product.description }}
+                </p>
+                <p><strong>Price:</strong> ₹{{ item.product.price }}</p>
+                <div class="btns__">
+                    <button class="btn btn-primary" id=1 value={{item._id}} (click)="addtocart($event)">
+                        On the way
+                    </button>
+                    <button class="btn btn-primary" id=2 value={{item._id}} (click)="addtocart($event)">
+                        Delivered
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
